@@ -11,6 +11,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(configure =>
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
