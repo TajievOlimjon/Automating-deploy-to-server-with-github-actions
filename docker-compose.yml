@@ -1,0 +1,43 @@
+﻿version: '3'
+
+networks:
+  dev:
+    driver: bridge
+
+services:
+  web-auth-service:
+   image: tajievolimjon/web-auth-service
+   container_name: web-auth-service
+   restart: always
+   build:
+    context: .
+    dockerfile: ./WebApi/Dockerfile
+   # env_file:
+   #    - \WebApi\.env
+   environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:80
+   ports:
+   - "8098:80"
+   depends_on:
+   - "web-auth-service_db"
+   networks:
+   - dev 
+  web-auth-service_db:
+   image: postgres:latest
+   container_name: web-auth-service_db
+   restart: always
+   # env_file:
+   #    - \WebApi\.env
+   ports:
+    - "5439:5432"
+   environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_DB=UsersDb
+    - POSTGRES_PASSWORD=web-auth-service-2023
+   volumes:
+    - web-auth-service-data:/var/lib/postgresql/data
+   networks:
+    - dev
+volumes:
+  web-auth-service-data: {}
