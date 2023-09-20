@@ -11,9 +11,7 @@ services:
    restart: always
    build:
     context: .
-    dockerfile: ./WebApi/Dockerfile
-   # env_file:
-   #    - \WebApi\.env
+    dockerfile: /WebApi/Dockerfile
    environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:80
@@ -27,8 +25,6 @@ services:
    image: postgres:latest
    container_name: web-auth-service_db
    restart: always
-   # env_file:
-   #    - \WebApi\.env
    ports:
     - "5439:5432"
    environment:
