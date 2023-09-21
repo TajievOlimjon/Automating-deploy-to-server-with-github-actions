@@ -54,7 +54,7 @@ namespace WebApi
             return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
         }
 
-        // PUT: api/users/5
+/*        // PUT: api/users/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
@@ -98,7 +98,7 @@ namespace WebApi
             await _dbContext.SaveChangesAsync();
 
             return NoContent();
-        }
+        }*/
 
         private bool UserExists(int id)
         {
