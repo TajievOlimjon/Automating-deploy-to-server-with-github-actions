@@ -23,7 +23,7 @@ namespace WebApi
         }
 
         // GET: api/users/5
-       /* [HttpGet("{id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
             var user = await _dbContext.Users.FindAsync(id);
@@ -34,20 +34,20 @@ namespace WebApi
             }
 
             return user;
-        }*/
+        }
 
         // POST: api/users
-        /*[HttpPost]
+        [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
             _dbContext.Users.Add(user);
             await _dbContext.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
-        }*/
+        }
 
         // PUT: api/users/5
-        /*[HttpPut("{id}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
             if (id != user.Id)
@@ -95,6 +95,6 @@ namespace WebApi
         private bool UserExists(int id)
         {
             return _dbContext.Users.Any(e => e.Id == id);
-        }*/
+        }
     }
 }
