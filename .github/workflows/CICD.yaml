@@ -38,8 +38,10 @@ jobs:
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           command: |
-            cd /var/www/web-auth/;
+            cd ${{ secrets.PROJECT_FOLDER }};
+            ll;
             docker compose -f docker-compose.yml pull;
+            docker compose ps;
             docker compose -f docker-compose.yml down;
             docker compose -f docker-compose.yml up -d;
 
