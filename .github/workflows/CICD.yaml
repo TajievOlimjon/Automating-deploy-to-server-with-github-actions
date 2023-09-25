@@ -37,7 +37,7 @@ jobs:
         with:
           host: ${{ secrets.SERVER_HOSTNAME }}
           username: ${{ secrets.SERVER_USERNAME }}
-          private_key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY }}
           command: |
             cd ${{ secrets.PROJECT_FOLDER }};
             docker compose pull tajievolimjon/web-auth-service:latest;
