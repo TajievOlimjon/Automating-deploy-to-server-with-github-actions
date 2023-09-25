@@ -39,8 +39,8 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           command: |
             cd ${{ secrets.PROJECT_FOLDER }};
-            docker compose pull tajievolimjon/web-auth-service:latest;
-            docker-compose --file docker-compose.yml down;
-            docker-compose --file docker-compose.yml up -d;
+            docker compose pull;
+            docker-compose down;
+            docker-compose up -d;
 
 
