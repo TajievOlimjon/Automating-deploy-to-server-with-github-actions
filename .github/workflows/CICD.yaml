@@ -37,11 +37,11 @@ jobs:
         with:
           host: ${{ secrets.SERVER_HOSTNAME }}
           username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
+          private_key: ${{ secrets.SSH_KEY }}
+          command: |
             cd ${{ secrets.PROJECT_FOLDER }};
-            docker compose pull tajievolimjon/web-auth-service:latest
-            docker-compose --file docker-compose.yml down
-            docker-compose --file docker-compose.yml up -d
+            docker compose pull tajievolimjon/web-auth-service:latest;
+            docker-compose --file docker-compose.yml down;
+            docker-compose --file docker-compose.yml up -d;
 
 
