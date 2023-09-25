@@ -32,7 +32,7 @@ jobs:
     needs: build
     steps:
       - name: update current container
-        uses: appleboy/ssh-action@main
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_HOSTNAME }}
           username: ${{ secrets.SERVER_USERNAME }}
