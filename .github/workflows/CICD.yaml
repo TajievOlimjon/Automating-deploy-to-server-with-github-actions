@@ -24,7 +24,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/web-service
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/web-auth-service
           # tags: username/same-project:latest  # Please change the username here
   # update_server:
   #   name: Updating prod environment

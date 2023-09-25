@@ -45,14 +45,14 @@ namespace WebApi
         }
 
         // POST: api/users
-        [HttpPost]
+       /* [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
             _dbContext.Users.Add(user);
             await _dbContext.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
-        }
+        }*/
 
         // PUT: api/users/5
         [HttpPut("{id}")]
