@@ -47,7 +47,7 @@ namespace WebApi
         }*/
 
         // PUT: api/users/5
-        [HttpPut("{id}")]
+        /*[HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, User user)
         {
             if (id != user.Id)
@@ -95,6 +95,6 @@ namespace WebApi
         private bool UserExists(int id)
         {
             return _dbContext.Users.Any(e => e.Id == id);
-        }
+        }*/
     }
 }
