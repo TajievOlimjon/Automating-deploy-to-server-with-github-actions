@@ -24,7 +24,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: username/web-auth-service
+          tags: tajievolimjon/web-auth-service
           #tags: ${{ secrets.DOCKERHUB_USERNAME }}/web-auth-service
 
           # tags: username/same-project:latest  # Please change the username here
