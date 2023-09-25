@@ -19,14 +19,6 @@ namespace WebApi
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
-            var newUser = new User
-            {
-                Name ="Azam",
-                Email = "azam@gmail.com"
-            };
-            await _dbContext.Users.AddAsync(newUser);
-            await _dbContext.SaveChangesAsync();
-
             return await _dbContext.Users.ToListAsync();
         }
 

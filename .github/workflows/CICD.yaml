@@ -25,15 +25,14 @@ jobs:
         with:
           push: true
           tags: tajievolimjon/web-auth-service
-          #tags: ${{ secrets.DOCKERHUB_USERNAME }}/web-auth-service
-          # tags: username/same-project:latest  # Please change the username here
+
   update_server:
     name: Updating production project
     runs-on: ubuntu-latest
     needs: build
     steps:
       - name: update current container
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@main
         with:
           host: ${{ secrets.SERVER_HOSTNAME }}
           username: ${{ secrets.SERVER_USERNAME }}
