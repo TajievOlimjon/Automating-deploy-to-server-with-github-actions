@@ -15,12 +15,12 @@ namespace WebApi.Controllers
             _dbContext = dbContext;
             _logger = logger;
         }
-        /*// GET: api/users
+        // GET: api/users
         [HttpGet("GetAllRoles")]
         public async Task<ActionResult<IEnumerable<Role>>> GetRoles()
         {
             return await _dbContext.Roles.ToListAsync();
-        }*/
+        }
 
         // GET: api/users/5
         [HttpGet("{id}")]
