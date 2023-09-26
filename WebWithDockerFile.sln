@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{02A439F3-DBDF-4C91-8CCF-97A95CB0F839}"
 	ProjectSection(SolutionItems) = preProject
 		.dockerignore = .dockerignore
+		.github\workflows\CICD-for-dev.yaml = .github\workflows\CICD-for-dev.yaml
 		.github\workflows\CICD.yaml = .github\workflows\CICD.yaml
 		docker-compose-for-dev.yml = docker-compose-for-dev.yml
 		docker-compose.yml = docker-compose.yml

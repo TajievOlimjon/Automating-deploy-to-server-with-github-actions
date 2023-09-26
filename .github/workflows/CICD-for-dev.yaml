@@ -41,7 +41,7 @@ jobs:
           script: |
             cd ${{ secrets.SERVER_DEV_PROJECT_FOLDER }};
             docker compose -f docker-compose-for-dev.yml pull;
-            docker compose ps;
+            docker compose -f docker-compose-for-dev.yml ps;
             docker compose -f docker-compose-for-dev.yml down;
             docker compose -f docker-compose-for-dev.yml up -d;
 
