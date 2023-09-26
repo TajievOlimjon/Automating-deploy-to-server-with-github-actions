@@ -15,7 +15,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-
+var connection = app.Configuration.GetConnectionString("DefaultConnection");
+app.Logger.LogInformation("Database: {connection}", connection);
 await using var scope = app.Services.CreateAsyncScope();
 var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 await dbContext.Database.MigrateAsync();

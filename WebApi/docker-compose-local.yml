@@ -1,0 +1,40 @@
+﻿version: '3'
+
+networks:
+  dev:
+    driver: bridge
+
+services:
+  web:
+   image: tajievolimjon/webapi
+   container_name: webapi
+   restart: always
+   build:
+    context: .
+    dockerfile: /Dockerfile
+   env_file:
+      - .env
+   ports:
+   - "8085:80"
+   depends_on:
+   - "web_db"
+   networks:
+   - dev 
+  web_db:
+   image: postgres:latest
+   container_name: web_db
+   restart: always
+   env_file:
+      - .env
+   ports:
+    - "5433:5432"
+   environment:
+    - POSTGRES_USER=${DB_USERNAME}
+    - POSTGRES_DB=${DB_NAME}
+    - POSTGRES_PASSWORD=${DB_PASSWORD}
+   volumes:
+    - webapi-data:/var/lib/postgresql/data
+   networks:
+    - dev
+volumes:
+  webapi-data: {}
