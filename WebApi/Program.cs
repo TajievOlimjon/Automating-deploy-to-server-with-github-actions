@@ -20,7 +20,7 @@ await using var scope = app.Services.CreateAsyncScope();
 var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
 await dbContext.Database.MigrateAsync();
 
-if (app.Environment.IsDevelopment()||app.Environment.IsProduction())
+if (app.Environment.IsDevelopment()||app.Environment.IsProduction()||app.Environment.IsStaging())
 {
     app.UseSwagger();
     app.UseSwaggerUI();

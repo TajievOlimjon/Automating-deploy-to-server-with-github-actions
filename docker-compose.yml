@@ -22,7 +22,7 @@ services:
    networks:
    - dev 
   web-auth-service_db:
-   image: postgres:latest
+   image: postgres:15.4-bullseye
    container_name: web-auth-service_db
    restart: always
    ports:
