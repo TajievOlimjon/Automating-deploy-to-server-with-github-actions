@@ -16,7 +16,7 @@ namespace WebApi
             _logger = logger;
         }
         // GET: api/users
-        [HttpGet]
+        [HttpGet("GetAllUsers")]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
             return await _dbContext.Users.ToListAsync();
