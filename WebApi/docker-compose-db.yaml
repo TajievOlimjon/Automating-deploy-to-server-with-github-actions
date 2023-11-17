@@ -17,3 +17,4 @@ services:
     - webapi-data:/var/lib/postgresql/data
 volumes:
   webapi-data: {}
+
